@@ -3,7 +3,7 @@
     using Microsoft.EntityFrameworkCore;
     using WorkBench.Models;
 
-    public class AppDbContext : DbContext
+    public class WorkBenchDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
