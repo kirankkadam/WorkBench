@@ -1,6 +1,8 @@
-﻿namespace WorkBench.Models
+﻿using IModel = WorkBench.Models.Interfaces.IModel;
+
+namespace WorkBench.Models
 {
-    public class TaskItem
+    public class TaskItem: IModel
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
