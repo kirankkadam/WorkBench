@@ -1,17 +1,15 @@
 using WorkBench.DB;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<WorkBenchDbContext>();
 
 var app = builder.Build();
 
-using var db = new AppDbContext();
+using var db = new WorkBenchDbContext();
 
 // This creates the database and seeds the data if it doesn't exist
 Console.WriteLine("Ensuring database is created...");
