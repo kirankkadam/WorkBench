@@ -3,7 +3,7 @@
     public class Timesheet
     {
         public int Id { get; set; }
-        public int UserId { get; set; } // Foreign Key to Person
+        public int PersonId { get; set; } // Foreign Key to Person
         public int TaskId { get; set; } // Foreign Key to Task
         public string Comment { get; set; } = string.Empty;
         public DateTime ExecutedOn { get; set; }

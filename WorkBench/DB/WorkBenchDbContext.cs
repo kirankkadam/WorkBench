@@ -24,6 +24,12 @@
                 new TaskItem { Id = 1, Title = "Programming", Description = "Coding new requirements or fixing existing ones" },
                 new TaskItem { Id = 2, Title = "Testing", Description = "Testing the new or revised functionality to make sure everything runs smooth" }
             );
+
+            // WorkBenchDbContext.cs - inside OnModelCreating
+            modelBuilder.Entity<Timesheet>()
+                .HasOne(t => t.Person)
+                .WithMany(p => p.Timesheets)
+                .HasForeignKey(t => t.PersonId);
         }
 
         public DbSet<Person> Persons { get; set; }
