@@ -1,4 +1,8 @@
+using Microsoft.EntityFrameworkCore.Metadata;
 using WorkBench.DB;
+using WorkBench.Models;
+using WorkBench.Repository;
+using WorkBench.Repository.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -6,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<WorkBenchDbContext>();
+builder.Services.AddScoped<IRepository<Timesheet>, Repository<Timesheet>>();
 
 var app = builder.Build();
 
