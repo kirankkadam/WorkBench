@@ -9,10 +9,21 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+                                          builder =>
+                                          {
+                                              builder.WithOrigins("http://localhost:4200")
+                                                                    .AllowAnyHeader()
+                                                                    .AllowAnyMethod();
+                                          });
+});
 builder.Services.AddSingleton<WorkBenchDbContext>();
 builder.Services.AddScoped<IRepository<Timesheet>, Repository<Timesheet>>();
 
 var app = builder.Build();
+app.UseCors("AllowSpecificOrigin");
 
 using var db = new WorkBenchDbContext();
 

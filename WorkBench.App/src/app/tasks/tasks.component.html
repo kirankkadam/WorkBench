@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  @if (Tasks() === undefined || Tasks().length === 0){
+  <div class="alert alert-primary">
+    <span>No task data to display</span>
+  </div>
+  }
+  @else{
+  <section>
+    <h3 class="display-6">Tasks</h3>
+    <hr />
+    @for (t of Tasks(); track t.id) {
+    <div>
+      <span class="txt-primary fs-3 fw-semibold">{{ t.title }}</span>
+    </div>
+    }
+  </section>
+  }
+</div>
