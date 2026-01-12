@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  @if (People() !== undefined && People().length > 0){
+  <section>
+    <h3 class="display-6">People</h3>
+    <hr />
+    @for (p of People(); track p.id) {
+    <div><span class="txt-primary fs-3 fw-semibold">{{ p.fullName }}</span></div>
+    }
+  </section>
+  }
+  @else{
+  <div class="alert alert-primary">
+    <span>No people data to display</span>
+  </div>
+  }
+</div>
