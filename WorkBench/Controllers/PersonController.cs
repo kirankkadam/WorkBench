@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WorkBench.DB;
+using WorkBench.ViewModels;
 
 namespace WorkBench.Controllers
 {
@@ -35,6 +36,23 @@ namespace WorkBench.Controllers
                 result.Add(personViewModel);
             }
             return Ok(result);
+        }
+
+        [HttpPost("AddNewPerson")]
+        public async Task<IActionResult> AddNewPerson([FromBody] Person newPerson)
+        {
+            if (newPerson is null)
+            {
+                return BadRequest();
+            }
+            var personModel = new Models.Person
+            {
+                FullName = newPerson.FullName
+            };
+            _workBenchDbContext.Persons.Add(personModel);
+            _workBenchDbContext.SaveChanges();
+
+            return Ok(newPerson);
         }
     }
 }
