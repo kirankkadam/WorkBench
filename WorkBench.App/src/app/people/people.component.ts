@@ -1,5 +1,5 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { person } from './interface/person';
+import { Person } from './interface/person';
 import { CommonModule } from '@angular/common';
 import { PeopleService } from './service/people.service';
 import { BaseComponent } from '../base/base.component';
@@ -13,7 +13,7 @@ import { BaseComponent } from '../base/base.component';
 
 export class PeopleComponent extends BaseComponent implements OnInit {
 
-  People = signal<person[]>([]);
+  People = signal<Person[]>([]);
   IsVisible = signal(false);
   private _peopleService: PeopleService;
 

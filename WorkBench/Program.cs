@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
                                                                     .AllowAnyMethod();
                                           });
 });
-builder.Services.AddSingleton<WorkBenchDbContext>();
+builder.Services.AddScoped<WorkBenchDbContext>();
 builder.Services.AddScoped<IRepository<Timesheet>, Repository<Timesheet>>();
 
 var app = builder.Build();

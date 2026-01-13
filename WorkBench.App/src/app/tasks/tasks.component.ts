@@ -1,5 +1,5 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { task } from './interface/task';
+import { Task } from './interface/task';
 import { CommonModule } from '@angular/common';
 import { TasksService } from './service/tasks.service';
 import { BaseComponent } from '../base/base.component';
@@ -14,7 +14,7 @@ import { BaseComponent } from '../base/base.component';
 
 export class TasksComponent extends BaseComponent implements OnInit {
 
-  Tasks = signal<task[]>([]);
+  Tasks = signal<Task[]>([]);
   private _tasksService: TasksService;
 
   constructor(tasksService: TasksService) {

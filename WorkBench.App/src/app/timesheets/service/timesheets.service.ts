@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Person } from '../interface/person';
+import { Timesheet } from '../interface/timesheet';
 import { BaseService } from '../../base/base.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class PeopleService extends BaseService {
+export class TimesheetsService extends BaseService {
   private _httpClient: HttpClient;
 
-  People: Person[] = [];
   constructor(
     private httpClient: HttpClient
   ) {
@@ -19,7 +18,7 @@ export class PeopleService extends BaseService {
     this._httpClient = httpClient;
   }
 
-  getPeople(): Observable<Person[]> {
-    return this._httpClient.get<Person[]>(`${this.apiUrl}person/GetAllPeople`);
+  getTimesheets(): Observable<Timesheet[]> {
+    return this._httpClient.get<Timesheet[]>(`${this.apiUrl}timesheet/GetAllTimesheets`);
   }
 }

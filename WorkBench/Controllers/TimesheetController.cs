@@ -30,9 +30,12 @@ namespace WorkBench.Controllers
             {
                 Id = t.Id,
                 UserId = t.PersonId,
+                UserName = _workBenchDbContext.Persons.FirstOrDefault(person => person.Id == t.PersonId)?.FullName,
                 TaskId = t.TaskId,
+                TaskTitle = _workBenchDbContext.Tasks.FirstOrDefault(task => task.Id == t.TaskId)?.Title,
                 Comment = t.Comment,
-                Date = t.ExecutedOn
+                ExecutedOn = t.ExecutedOn,
+                HoursWorked = t.HoursWorked
             }).ToList();
 
             return Ok(timesheetViewModels);
@@ -53,7 +56,7 @@ namespace WorkBench.Controllers
                 UserId = timesheet.PersonId,
                 TaskId = timesheet.TaskId,
                 Comment = timesheet.Comment,
-                Date = timesheet.ExecutedOn
+                ExecutedOn = timesheet.ExecutedOn
             };
 
             return Ok(timesheetViewModel);
@@ -72,7 +75,8 @@ namespace WorkBench.Controllers
                 PersonId = timesheet.UserId,
                 TaskId = timesheet.TaskId,
                 Comment = timesheet.Comment,
-                ExecutedOn = timesheet.Date
+                ExecutedOn = timesheet.ExecutedOn,
+                HoursWorked = timesheet.HoursWorked
             };
             await _workBenchRepository.AddAsync(newTimesheet);
             _workBenchDbContext.SaveChanges();
