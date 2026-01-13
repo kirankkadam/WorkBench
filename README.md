@@ -49,4 +49,14 @@ ng serve
 9. Tasks view is a read only screen with a list of seeded tasks.
 
 ## Screenshots
+### Web API (Swagger)
+<img width="1877" height="992" alt="image" src="https://github.com/user-attachments/assets/7208f841-5147-4356-941d-18c35a75e68b" />
+
 ### Timesheet Entry Form
+
+<img width="1887" height="1001" alt="image" src="https://github.com/user-attachments/assets/5a77665b-af11-4f21-8c4b-aa029027119e" />
+
+### People View
+
+### Task View
+
