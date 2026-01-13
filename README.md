@@ -21,18 +21,25 @@ Automated DB Setup: Local SQL database is automatically created and seeded with 
   - RxJS & HttpClient: For asynchronous API communication.
  
 ## Getting Started
+### Web Api
 1. Open the solution in Visual studio 2022.
 2. Make sure the connection string in  WorkBenchDbContext.cs file is pointing to LocalDb.
 3. Start the Web Api by hitting F5 or the play button. On successful execution it should display the swagger page.
-4. Use the following steps to start the Web API in VS Code
-    - Navigate to the API project folder:
-      ```
-      cd WorkBench
-      ```
-    - Open AppDbContext.cs and ensure the connection string points to your local SQL instance.
-  
-      ``` Run the application:
-      dotnet run
-      ```
 
 __Note:__ On the first execution, db.Database.EnsureCreated() will trigger. This will create WorkBenchDb in your LocalDB and seed it with 2 users __Anton Robins__ and __John Smith__, also it will seed 2 tasks __Programming__ and __Testing__.
+
+### Angular UI
+1. Navigate to the Angular project folder
+```
+cd WorkBench.App
+```
+2. Install dependencies:
+```
+npm install
+```
+3. Ensure the apiUrl in src/app/base/base.service.ts matches your .NET API URL (usually https://localhost:44374/).
+4. Launch the development server
+```
+ng serve
+```
+5. Open your browser to http://localhost:4200.
