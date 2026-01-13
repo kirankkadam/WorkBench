@@ -15,7 +15,6 @@ import { BaseComponent } from '../base/base.component';
 export class PeopleComponent extends BaseComponent implements OnInit {
 
   People = signal<Person[]>([]);
-  IsVisible = signal(false);
   IsSubmitting = signal(false);
   private fb = inject(FormBuilder);
 
@@ -51,7 +50,6 @@ export class PeopleComponent extends BaseComponent implements OnInit {
 
       this._peopleService.addPerson(this.PersonForm.value as any).subscribe({
         next: (newPerson) => {
-          console.log('Person added:', newPerson);
           this.PersonForm.reset();
           this.IsSubmitting.set(false);
           this.getPeople();

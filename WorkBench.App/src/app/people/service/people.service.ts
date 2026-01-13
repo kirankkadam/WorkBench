@@ -11,7 +11,6 @@ import { BaseService } from '../../base/base.service';
 export class PeopleService extends BaseService {
   private _httpClient: HttpClient;
 
-  People: Person[] = [];
   constructor(
     private httpClient: HttpClient
   ) {
