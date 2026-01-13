@@ -43,3 +43,10 @@ npm install
 ng serve
 ```
 5. Open your browser to http://localhost:4200.
+6. The timesheet screen is the default landing page.
+7. There are 3 menu options on the top navigation bar: Timesheets, People, and Tasks.
+8. People view is a read only screen with a list of seeded users.
+9. Tasks view is a read only screen with a list of seeded tasks.
+
+## Screenshots
+### Timesheet Entry Form
