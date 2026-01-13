@@ -4,7 +4,7 @@
   <form [formGroup]="PersonForm" (ngSubmit)="onSubmit()">
     <div class="form-group mb-3">
       <label for="fullName" class="form-label">Full Name</label>
-      <input id="fullName" class="form-control form-control-lg" type="text" formControlName="fullName" placeholder="Enter name...">
+      <input id="fullName" class="form-control form-control-lg" type="text" formControlName="fullName" placeholder="Enter name..." maxlength="50" >
 
       @if (PersonForm.get('fullName')?.touched && PersonForm.get('fullName')?.invalid) {
       <span class="text-danger">Name is required (min 3 characters).</span>
