@@ -5,7 +5,7 @@
   <form [formGroup]="TaskForm" (ngSubmit)="onSubmit()">
     <div class="form-group mb-3">
       <label for="title" class="form-label">Title</label>
-      <input id="title" class="form-control form-control-lg" type="text" formControlName="title" placeholder="Title">
+      <input id="title" class="form-control form-control-lg" type="text" formControlName="title" placeholder="Title" maxlength="50" />
 
       @if (TaskForm.get('title')?.touched && TaskForm.get('title')?.invalid) {
       <span class="text-danger">Title is required (min 3 characters).</span>
@@ -14,7 +14,7 @@
 
     <div class="form-group mb-3">
       <label for="description" class="form-label">Description</label>
-      <input id="description" class="form-control form-control-lg" type="text" formControlName="description" placeholder="Description">
+      <input id="description" class="form-control form-control-lg" type="text" formControlName="description" placeholder="Description" maxlength="100"/>
 
       @if (TaskForm.get('description')?.touched && TaskForm.get('description')?.invalid) {
       <span class="text-danger">Description is required (min 3 characters).</span>

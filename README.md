@@ -45,8 +45,8 @@ ng serve
 5. Open your browser to http://localhost:4200.
 6. The timesheet screen is the default landing page.
 7. There are 3 menu options on the top navigation bar: Timesheets, People, and Tasks.
-8. People view is a read only screen with a list of seeded users.
-9. Tasks view is a read only screen with a list of seeded tasks.
+8. From the People view we can create a new person and view the list of all the Person records.
+9. From the Tasks view we can create a new Task and view the list of all the Tasks.
 
 ## Screenshots
 ### Web API (Swagger)
@@ -57,8 +57,10 @@ ng serve
 
 <img width="1909" height="999" alt="image" src="https://github.com/user-attachments/assets/dae07ccb-f5cd-4ac4-ab9f-004d44b99d23" />
 
-
 ### People View
+<img width="1903" height="998" alt="image" src="https://github.com/user-attachments/assets/342a58ec-a1dd-4059-9a13-b07f6b61be13" />
 
 ### Task View
+<img width="1906" height="998" alt="image" src="https://github.com/user-attachments/assets/a319590d-2c98-471d-89a6-7093aeed072f" />
+
 
