@@ -52,9 +52,11 @@ ng serve
 ### Web API (Swagger)
 <img width="1877" height="992" alt="image" src="https://github.com/user-attachments/assets/7208f841-5147-4356-941d-18c35a75e68b" />
 
-### Timesheet Entry Form
-
+### Timesheet Entry View
 <img width="1887" height="1001" alt="image" src="https://github.com/user-attachments/assets/5a77665b-af11-4f21-8c4b-aa029027119e" />
+
+<img width="1909" height="999" alt="image" src="https://github.com/user-attachments/assets/dae07ccb-f5cd-4ac4-ab9f-004d44b99d23" />
+
 
 ### People View
 
