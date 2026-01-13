@@ -4,16 +4,16 @@ A full-stack application designed to track employee work hours against specific 
 ## Key Functionality
 Automated DB Setup: Local SQL database is automatically created and seeded with dummy People and Tasks on first run.
 
-- Data Persistence: Uses Entity Framework Core 9 for relational data mapping.
+- Data Persistence: Uses Entity Framework Core 10 for relational data mapping.
 - Clean Architecture: Separation of concerns via Services, Repositories.
 - Reactive UI: Angular 21 frontend with real-time validation and state management via Signals.
 - Timesheet Logging: User-friendly form with validation for hours, dates, and associations.
 
 ## Technologies Used
 - ### Backend (.NET Core 10)
-  - Entity Framework Core 9: ORM for database operations.
+  - Entity Framework Core 10: ORM for database operations.
   - SQL Server (LocalDB): Lightweight local database.
-  - Repository & Unit of Work: Design patterns for clean data access.
+  - Repository pattern: Design patterns for clean data access.
 - ### Frontend (Angular 21)
   - Angular Signals: For reactive state management.
   - Standalone Components: Lightweight, modular UI structure.
