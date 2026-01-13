@@ -11,7 +11,6 @@ import { BaseService } from '../../base/base.service';
 export class PeopleService extends BaseService {
   private _httpClient: HttpClient;
 
-  People: Person[] = [];
   constructor(
     private httpClient: HttpClient
   ) {
@@ -21,5 +20,9 @@ export class PeopleService extends BaseService {
 
   getPeople(): Observable<Person[]> {
     return this._httpClient.get<Person[]>(`${this.apiUrl}person/GetAllPeople`);
+  }
+
+  addPerson(newPerson: Person): Observable<any> {
+    return this._httpClient.post(`${this.apiUrl}person/AddNewPerson`, newPerson)
   }
 }

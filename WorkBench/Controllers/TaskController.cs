@@ -31,5 +31,25 @@ namespace WorkBench.Controllers
 
             return Ok(taskViewModels);
         }
+
+        [HttpPost("AddNewTask")]
+        public async Task<IActionResult> AddNewTask([FromBody] ViewModels.Task newTask)
+        {
+            if (newTask == null)
+            {
+                return BadRequest("Task data is null.");
+            }
+
+            var taskEntity = new Models.TaskItem
+            {
+                Title = newTask.Title,
+                Description = newTask.Description
+            };
+
+            _workBenchDbContext.Tasks.Add(taskEntity);
+            await _workBenchDbContext.SaveChangesAsync();
+            newTask.Id = taskEntity.Id;
+            return Ok(newTask);
+        }
     }
 }
