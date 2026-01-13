@@ -14,7 +14,7 @@ namespace WorkBench.ViewModels
         [Required(ErrorMessage ="Please select a user id")]
         public int UserId { get; set; }
         public string? UserName { get; set; }
-        public string Comment { get; set; }
+        public string? Comment { get; set; }
         public DateTime ExecutedOn { get; set; }
         public decimal HoursWorked { get; set; }
     }
