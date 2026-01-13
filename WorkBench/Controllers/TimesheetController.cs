@@ -62,10 +62,10 @@ namespace WorkBench.Controllers
             return Ok(timesheetViewModel);
         }
 
-        [HttpPost]
+        [HttpPost("AddTimesheet")]
         public async Task<IActionResult> AddTimesheet([FromBody] ViewModels.Timesheet timesheet)
         {
-            if(timesheet == null || timesheet.UserId <= 0 || timesheet.TaskId <= 0)
+            if (timesheet == null || timesheet.UserId <= 0 || timesheet.TaskId <= 0)
             {
                 return BadRequest("Bad timesheet data.");
             }
@@ -83,22 +83,23 @@ namespace WorkBench.Controllers
             return Ok();
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteTimesheet(ViewModels.Timesheet timesheet)
+        [HttpDelete("DeleteTimesheet")]
+        public async Task<IActionResult> DeleteTimesheet(int timesheetId)
         {
-            if (timesheet == null || timesheet.Id <= 0)
+            if (timesheetId <= 0)
             {
                 return BadRequest("Bad timesheet data.");
             }
 
-            var timehseetInDb = await _workBenchRepository.GetByIdAsync(timesheet.Id);
+            var timehseetInDb = await _workBenchRepository.GetByIdAsync(timesheetId);
             if(timehseetInDb is null)
             {
                 return NotFound();
             }
 
-            await _workBenchRepository.DeleteAsync(timesheet.Id);
-            return Ok();
+            await _workBenchRepository.DeleteAsync(timesheetId);
+            _workBenchDbContext.SaveChanges();
+            return Ok(timesheetId);
         }
     }
 }

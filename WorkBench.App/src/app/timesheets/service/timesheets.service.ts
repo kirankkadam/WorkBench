@@ -21,4 +21,12 @@ export class TimesheetsService extends BaseService {
   getTimesheets(): Observable<Timesheet[]> {
     return this._httpClient.get<Timesheet[]>(`${this.apiUrl}timesheet/GetAllTimesheets`);
   }
+
+  addTimesheet(timesheet: Timesheet): Observable<any> {
+    return this._httpClient.post(`${this.apiUrl}timesheet/AddTimesheet`, timesheet);
+  }
+
+  deleteTimesheet(timesheetId: number): Observable<any> {
+    return this._httpClient.delete(`${this.apiUrl}timesheet/DeleteTimesheet?timesheetId=${timesheetId}`);
+  }
 }
