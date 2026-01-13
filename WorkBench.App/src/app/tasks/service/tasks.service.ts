@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { task } from '../interface/task';
+import { Task } from '../interface/task';
 import { BaseService } from '../../base/base.service';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class TasksService extends BaseService {
     this._httpClient = httpClient;
   }
 
-  getTasks(): Observable<task[]> {
-    return this._httpClient.get<task[]>(`${this.apiUrl}task/GetAllTasks`);
+  getTasks(): Observable<Task[]> {
+    return this._httpClient.get<Task[]>(`${this.apiUrl}task/GetAllTasks`);
   }
 }

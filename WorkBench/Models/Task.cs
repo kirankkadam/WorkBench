@@ -1,7 +1,9 @@
-﻿using IModel = WorkBench.Models.Interfaces.IModel;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using IModel = WorkBench.Models.Interfaces.IModel;
 
 namespace WorkBench.Models
 {
+    [Table("Tasks")]
     public class TaskItem: IModel
     {
         public int Id { get; set; }
